@@ -7,7 +7,7 @@ import Modal from 'react-modal'
 
 const Home = () => {
 
-  const [editNote,setEditNote] = useState({
+  const [note,setNote] = useState({
     isShown:false,
     type:"add",
     data:null,
@@ -32,13 +32,13 @@ const Home = () => {
 
     <button className='w-12 h-12 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10'
     onClick={() => {
-      setEditNote({ isShown:true, type:'add', data:null })
+      setNote({ isShown:true, type:'add', data:null })
     }}>
       <MdAdd className='text=[32px] text-white' />
     </button>
 
     <Modal
-    isOpen={editNote.isShown}
+    isOpen={note.isShown}
     onRequestClose={ () => {}}
     style={{
       overlay:{
@@ -47,7 +47,12 @@ const Home = () => {
     }}
     contentLabel=''
     className='w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-scroll'>
-      <AddEditNotes />   
+      <AddEditNotes 
+      noteData={note.data}
+      type={note.type}
+      onClose={() => {
+        setNote({ isShown:false, type:'add', data:null })
+      }}/>   
     </Modal>
 
     </>

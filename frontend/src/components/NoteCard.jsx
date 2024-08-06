@@ -20,16 +20,16 @@ const NoteCard = ({
                 <span className='text-sm text-slate-500'>{date}</span>
             </div>
 
-            <MdOutlinePushPin className={`icon-btn ${isPinned ? 'text-primary':'text-slate-100'}`} onclick={onPinNote} />
+            <MdOutlinePushPin className={`icon-btn ${isPinned ? 'text-primary':'text-slate-100'}`} onClick={onPinNote} />
         </div>
         <p className='text-xs text-slate-600 mt-2'>{content?.slice(0, 60)}</p>
         <div className='flex items-center justify-between mt-2'>
             <div className='text-xs text-slate-500'>{tags}</div>
             <div className='flex items-center gap-2'>
                 <MdCreate className='icon-btn hover:text-green-600'
-                onclick={onEdit} />
+                onClick={onEdit} />
                 <MdDelete className='icon-btn hover:text-red-500'
-                onclick={onDelete} />
+                onClick={onDelete} />
             </div>
         </div>
     </div>
