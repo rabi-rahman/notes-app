@@ -39,7 +39,7 @@ const Home = () => {
 
     <Modal
     isOpen={editNote.isShown}
-    onRequestClose={() => {}}
+    onRequestClose={ () => {}}
     style={{
       overlay:{
         backgroundColor: "rgba(0,0,0,0.2)",

@@ -1,8 +1,10 @@
 import React from 'react'
+import { IoMdClose } from 'react-icons/io'
 
 const AddEditNotes = () => {
   return (
     <div>
+        <IoMdClose className='text-xl text-slate-500 cursor-pointer hover:text-black mr-3'/>
         <div className='flex flex-col gap-2'>
             <label className='input-label'>TITLE</label>
             <input
@@ -15,7 +17,7 @@ const AddEditNotes = () => {
             <label className='input-label'>CONTENT</label>
             <textarea
             type='text'
-            className='text-sm text-slate-950 outline-none rounded'
+            className='text-sm text-slate-950 outline-none bg-slate-50 p-2 rounded'
             placeholder='Content'
             rows={10}>
             </textarea>
